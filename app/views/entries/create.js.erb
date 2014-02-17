@@ -1,0 +1,33 @@
+
+//$('#entries').append('<%= j render(:partial => "form")%>');
+//$("#new_entry")[0].reset();
+
+
+ /*Update the html of the div flash_notice with the new one*/
+//  $("#new_entry").html("<%= escape_javascript(flash[:notice])%>");
+
+  /*Show the flash_notice div*/
+  //$("#new_entry").show(300);
+
+  /*Clear the entire form*/
+  //$(":input:not(input[type=submit])").val("");
+
+  /*Replace the html of the div post_lists with the updated new one*/
+  //$("#entries").html("<%= escape_javascript( render(:partial => "form") ) %>");
+//<% end -%>
+//$('#new_entry').remove();
+//$('#new_entry_link').show();
+//$('#entries').append(' @entry)%>');
+
+<% if @entry.errors.count == 0 %>
+
+	$('#new_entry').remove();
+	$('#new_entry_link').show();
+	$('#entries').append('<%= j render("entry", :entry => @entry) %>');
+
+<% else %>
+
+	$('.new_entry').remove();
+	$('#new_entry_link').after('<%= j render("form") %>');
+
+<% end %>

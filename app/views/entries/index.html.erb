@@ -1,0 +1,29 @@
+<h1>Listing entries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tbody id="entries">
+
+<% @entries.each do |entry| %>
+  <%= render "entry", :entry => entry%> 
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Entry', new_entry_path, remote: true, :id => "new_entry_link" %>
+
+
+<h2>Entry form</h2>
+<div id="form">
+  <%= render :partial => "form" %>
+</div> 
